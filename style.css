@@ -21,17 +21,20 @@ h1 {
 }
 
 .sub-container {
-  height: 450px;
+  height: 650px;
 }
 
 .cards {
-  height: 250px;
+  height: 450px;
 }
 
 .card {
-  border: 1px solid #aaa;
-  margin: 20px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  margin: 50px;
   vertical-align: middle;
+  height: 350px;
+  width: 600px;
 }
 
 button {
