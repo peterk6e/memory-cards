@@ -4,23 +4,29 @@ const arrowL = document.getElementById("arrow-left");
 const arrowR = document.getElementById("arrow-right");
 const cardEl = document.getElementById("card");
 const cardsEl = document.getElementById("cards");
+const formEl = document.getElementById("card-form");
+const indexEl = document.getElementById("index");
+const totalEl = document.getElementById("total");
 const cards = [];
-var index = 0;
+var index = 0; 
 cardEl.style.display = "none";
 
 function create() {
-  const input_question = document.getElementById("question").value;
-  const input_answer = document.getElementById("answer").value;
+  const input_question = document.getElementById("question");
+  const input_answer = document.getElementById("answer");
   const card = {
-    question: input_question,
-    answer: input_answer,
+    question: input_question.value,
+    answer: input_answer.value,
   };
   cards.push(card); // will be saved in local storage
+  input_question.value="";
+  input_answer.value="";
 }
 
 function displayCards() {
-  if (cardEl.style.display === "none") cardEl.style.display = "block"; // for 1st card
+  if (cardEl.style.display === "none") cardEl.style.display = "flex"; // for 1st card
   cardEl.innerText = cards[index].question;
+  updateController();
 }
 
 function flipCard() {
@@ -38,8 +44,20 @@ function toggleContainer() {
   }
 }
 
+function clearCards() {
+  cards.splice(0);
+  cardEl.style.display = "none";
+  index = 0;
+  indexEl.innerText = 0;
+  totalEl.innerText = cards.length;
+}
+
+function updateController() {
+  indexEl.innerText = index + 1;
+  totalEl.innerText = cards.length;
+}
+
 //Event listeners
-const formEl = document.getElementById("card-form");
 formEl.addEventListener("submit", (e) => {
   create();
   displayCards();
@@ -48,11 +66,16 @@ formEl.addEventListener("submit", (e) => {
 });
 
 arrowL.addEventListener("click", () => {
-  index = index == 0 ? cards.length : --index;
-  displayCards();
+  if (index != 0) {
+    index--;
+    displayCards();
+  }
 });
 
 arrowR.addEventListener("click", () => {
-  index = index == cards.length ? 0 : ++index;
-  displayCards();
+  if (index != cards.length){
+    index++;
+    displayCards();
+  }
 });
+

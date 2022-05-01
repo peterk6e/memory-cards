@@ -17,14 +17,13 @@
         <div class="cards" id="cards">
           <div class="card" id ="card" onclick="flipCard()"></div>
         </div>
-        <div class="controller" id="controller">
-          <span class="arrow" id="arrow-left">←</span>
-          <span class="arrow" id="arrow-right">→</span>
-        </div>
+          <span class="arrow" id="arrow-left">«</span>
+          <span id="index">0</span> / <span id="total">0</span>
+          <span class="arrow" id="arrow-right">»</span>
       </div>
       <div class="sub-container" id="new-card-container" hidden>
         <div class="right">
-          <button class="right" onclick="toggleContainer()">x Cancel</button>
+          <button class="right" onclick="toggleContainer()">⤫ Cancel</button>
         </div>
         <h1>Add New Card</h1>
         <form id="card-form">
@@ -36,7 +35,7 @@
         </form>
       </div>
     </div>
-    <button id="clear-cards-btn" onclick="clear()">Clear cards</button>
+    <button onclick="clearCards()">✥ Clear cards</button>
     <script src="script.js"></script>
   </body>
 </html>
