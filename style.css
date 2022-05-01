@@ -1,0 +1,16 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 80vh;
+  margin: 0;
+  font-size: 22px;
+}
+
+.container {
+  margin: auto;
+  width: 600px;
+  border: 1px solid rgb(121, 39, 39)
+}
