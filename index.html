@@ -9,8 +9,31 @@
   </head>
   <body>
     <div class="container">
-      <h1>Memory Cards</h1>
+      <div class="sub-container" id="card-container">
+        <div class="right">
+          <button id="create-card" onclick="create()">+ Add new card</button>
+        </div>
+        <h1>Memory Cards</h1>
+        <div class="cards" id="cards">
+        </div>
+        <div class="controller" id="controller">
+          <span class="arrow" id="arrow-left">←</span>
+          <span class="arrow" id="arrow-right">→</span>
+        </div>
+      </div>
+      <div class="sub-container" id="new-card-container" hidden>
+        <h1>Add New Card</h1>
+        <button class="right">X</button>
+        <form id="card-form">
+          <div>Question:</div>
+        <textarea id="question" placeholder="Write a question..." rows="4" cols="50" required autofocus></textarea>
+        <div>Answer:</div>
+        <textarea id="answer" placeholder="Write an answer..." rows="4" cols="50" required></textarea>
+          <button type="submit">+ Add card</button>
+        </form>
+      </div>
     </div>
+    <button id="clear-cards-btn" onclick="clear()">Clear cards</button>
     <script src="script.js"></script>
   </body>
 </html>
