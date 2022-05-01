@@ -11,15 +11,25 @@
     <div class="container">
       <div class="sub-container" id="card-container">
         <div class="right">
-          <button id="create-card" onclick="toggleContainer()">+ Add new card</button>
+          <button id="create-card" onclick="toggleContainer()">
+            + Add new card
+          </button>
         </div>
         <h1>Memory Cards</h1>
+        <!--  -->
         <div class="cards" id="cards">
-          <div class="card" id ="card" onclick="flipCard()"></div>
+          <div class="flip-card">
+            <div class="flip-card-inner" id="card">
+              <div class="flip-card-front" id="card-front"></div>
+              <div class="flip-card-back" id="card-back"></div>
+            </div>
+          </div>
+          <!--  -->
+          <!-- <div class="card" id ="card" onclick="flipCard()"></div> -->
         </div>
-          <span class="arrow" id="arrow-left">«</span>
-          <span id="index">0</span> / <span id="total">0</span>
-          <span class="arrow" id="arrow-right">»</span>
+        <span class="arrow" id="arrow-left">«</span>
+        <span id="index">0</span> / <span id="total">0</span>
+        <span class="arrow" id="arrow-right">»</span>
       </div>
       <div class="sub-container" id="new-card-container" hidden>
         <div class="right">
@@ -28,9 +38,22 @@
         <h1>Add New Card</h1>
         <form id="card-form">
           <div>Question:</div>
-        <textarea id="question" placeholder="Write a question..." rows="4" cols="46" required autofocus></textarea>
-        <div>Answer:</div>
-        <textarea id="answer" placeholder="Write an answer..." rows="4" cols="46" required></textarea>
+          <textarea
+            id="question"
+            placeholder="Write a question..."
+            rows="4"
+            cols="46"
+            required
+            autofocus
+          ></textarea>
+          <div>Answer:</div>
+          <textarea
+            id="answer"
+            placeholder="Write an answer..."
+            rows="4"
+            cols="46"
+            required
+          ></textarea>
           <button type="submit">+ Add card</button>
         </form>
       </div>

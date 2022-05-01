@@ -3,6 +3,8 @@ const newCardContainerEl = document.getElementById("new-card-container");
 const arrowL = document.getElementById("arrow-left");
 const arrowR = document.getElementById("arrow-right");
 const cardEl = document.getElementById("card");
+const cardFrontEl = document.getElementById("card-front");
+const cardBackEl = document.getElementById("card-back");
 const cardsEl = document.getElementById("cards");
 const formEl = document.getElementById("card-form");
 const indexEl = document.getElementById("index");
@@ -24,14 +26,18 @@ function create() {
 }
 
 function displayCards() {
-  if (cardEl.style.display === "none") cardEl.style.display = "flex"; // for 1st card
-  cardEl.innerText = cards[index].question;
+  if (cardEl.style.display === "none") {
+    cardEl.style.display = "flex";// for 1st card
+  }
+  cardFrontEl.innerText = cards[index].question;
+  cardBackEl.innerText = cards[index].answer;
+
   updateController();
 }
 
 function flipCard() {
-  let { question, answer } = cards[index];
-  cardEl.innerText = cardEl.innerText === question ? answer : question;
+//   let { question, answer } = cards[index];
+//   cardEl.innerText = cardEl.innerText === question ? answer : question;
 }
 
 function toggleContainer() {
