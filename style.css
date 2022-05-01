@@ -13,6 +13,10 @@ h1 {
   margin: 10px;
 }
 
+textarea {
+  font-size: 22px;
+}
+
 .container {
   margin: 200px auto;
   width: 700px;
@@ -44,6 +48,7 @@ button {
   font-size: 22px;
   color: rgb(103, 103, 103);
   border: 1px solid #bbb;
+  cursor: pointer;
 }
 
 button:hover {

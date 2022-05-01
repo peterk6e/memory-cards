@@ -15,6 +15,7 @@
         </div>
         <h1>Memory Cards</h1>
         <div class="cards" id="cards">
+          <div class="card" id ="card" onclick="flipCard()"></div>
         </div>
         <div class="controller" id="controller">
           <span class="arrow" id="arrow-left">←</span>
@@ -22,13 +23,15 @@
         </div>
       </div>
       <div class="sub-container" id="new-card-container" hidden>
+        <div class="right">
+          <button class="right" onclick="toggleContainer()">x Cancel</button>
+        </div>
         <h1>Add New Card</h1>
-        <button class="right">X</button>
         <form id="card-form">
           <div>Question:</div>
-        <textarea id="question" placeholder="Write a question..." rows="4" cols="50" required autofocus></textarea>
+        <textarea id="question" placeholder="Write a question..." rows="4" cols="46" required autofocus></textarea>
         <div>Answer:</div>
-        <textarea id="answer" placeholder="Write an answer..." rows="4" cols="50" required></textarea>
+        <textarea id="answer" placeholder="Write an answer..." rows="4" cols="46" required></textarea>
           <button type="submit">+ Add card</button>
         </form>
       </div>
