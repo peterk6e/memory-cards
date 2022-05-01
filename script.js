@@ -1,4 +1,6 @@
 const cardsEl = document.getElementById("cards");
+const cardContainerEl = document.getElementById("card-container");
+const newCardContainerEl = document.getElementById("new-card-container");
 const cards = [];
 
 function create() {
@@ -20,10 +22,19 @@ function flipCard(answer, question, cardEl) {
   cardEl.innerText = cardEl.innerText === question ? answer : question;
 }
 
+function toggleContainer() {
+  if (cardContainerEl.style.display == "none") {
+    cardContainerEl.style.display= "block";
+    newCardContainerEl.style.display = "none";
+  } else {
+    cardContainerEl.style.display = "none";
+    newCardContainerEl.style.display = "block";
+  }
+}
+
 const formEl = document.getElementById("card-form");
 formEl.addEventListener("submit", (e) => {
   create();
+  toggleContainer();
   e.preventDefault();
 });
-
-
