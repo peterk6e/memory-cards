@@ -10,7 +10,7 @@ const formEl = document.getElementById("card-form");
 const indexEl = document.getElementById("index");
 const totalEl = document.getElementById("total");
 const cards = [];
-var index = 0; 
+var index = 0;
 cardEl.style.display = "none";
 
 function create() {
@@ -21,8 +21,8 @@ function create() {
     answer: input_answer.value.toUpperCase(),
   };
   cards.push(card); // will be saved in local storage
-  input_question.value="";
-  input_answer.value="";
+  input_question.value = "";
+  input_answer.value = "";
 }
 
 function displayCards() {
@@ -32,6 +32,7 @@ function displayCards() {
   cardFrontEl.innerText = cards[index].question;
   cardBackEl.innerText = cards[index].answer;
 
+  cardEl.style.transform = "";
   updateController();
 }
 
@@ -45,12 +46,12 @@ function toggleContainer() {
   }
 }
 
-function flipCard () {
-    if(cardEl.style.transform== "rotateY(180deg)"){
-      cardEl.style.transform= "";
-    } else {
-      cardEl.style.transform= "rotateY(180deg)";
-    }
+function flipCard() {
+  if (cardEl.style.transform == "rotateY(180deg)") {
+    cardEl.style.transform = "";
+  } else {
+    cardEl.style.transform = "rotateY(180deg)";
+  }
 }
 
 function clearCards() {
@@ -66,6 +67,18 @@ function updateController() {
   totalEl.innerText = cards.length;
 }
 
+function slide(direction) {
+  if (direction == "right") {
+    cardEl.classList.add("animate-right");
+  } else {
+    cardEl.classList.add("animate-left");
+  }
+  setTimeout(() => {
+    cardEl.classList.remove("animate-left");
+    cardEl.classList.remove("animate-right");
+  }, 1000);
+}
+
 //Event listeners
 formEl.addEventListener("submit", (e) => {
   create();
@@ -77,14 +90,15 @@ formEl.addEventListener("submit", (e) => {
 arrowL.addEventListener("click", () => {
   if (index != 0) {
     index--;
+    slide("left");
     displayCards();
   }
 });
 
 arrowR.addEventListener("click", () => {
-  if (index != cards.length){
+  if (index != cards.length - 1) {
     index++;
+    slide("right");
     displayCards();
   }
 });
-
