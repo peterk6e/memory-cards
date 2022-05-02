@@ -17,8 +17,8 @@ function create() {
   const input_question = document.getElementById("question");
   const input_answer = document.getElementById("answer");
   const card = {
-    question: input_question.value,
-    answer: input_answer.value,
+    question: input_question.value.toUpperCase(),
+    answer: input_answer.value.toUpperCase(),
   };
   cards.push(card); // will be saved in local storage
   input_question.value="";
@@ -27,17 +27,12 @@ function create() {
 
 function displayCards() {
   if (cardEl.style.display === "none") {
-    cardEl.style.display = "flex";// for 1st card
+    cardEl.style.display = "flex";
   }
   cardFrontEl.innerText = cards[index].question;
   cardBackEl.innerText = cards[index].answer;
 
   updateController();
-}
-
-function flipCard() {
-//   let { question, answer } = cards[index];
-//   cardEl.innerText = cardEl.innerText === question ? answer : question;
 }
 
 function toggleContainer() {
