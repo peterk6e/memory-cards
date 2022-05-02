@@ -45,6 +45,14 @@ function toggleContainer() {
   }
 }
 
+function flipCard () {
+    if(cardEl.style.transform== "rotateY(180deg)"){
+      cardEl.style.transform= "";
+    } else {
+      cardEl.style.transform= "rotateY(180deg)";
+    }
+}
+
 function clearCards() {
   cards.splice(0);
   cardEl.style.display = "none";
